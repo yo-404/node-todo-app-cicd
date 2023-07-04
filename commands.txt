@@ -33,3 +33,13 @@ docker run -d --name node-app1 -p 8000:8000 node-app1
 
 docker rmi $(docker images -q) -f
 docker kill $(docker ps -q) -f
+
+
+//jenkins install new bash command
+curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
+  /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+sudo apt-get update
+sudo apt-get install jenkins
