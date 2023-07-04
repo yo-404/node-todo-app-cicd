@@ -1,0 +1,3 @@
+docker build . -t node-app1
+docker rm -f node-app1 && echo "container myjob removed" || echo "container myjob does not exist"
+docker run -d --name node-app1 -p 8000:8000 node-app1
